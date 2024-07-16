@@ -39,7 +39,7 @@ const Bill = () => {
         userID: currentUser._id,
       };
       await axios
-        .post("http://localhost:4000/api/sales/save_sales_data", payload)
+        .post("https://identity-ecommerce-backend.onrender.com/api/sales/save_sales_data", payload)
         .then((res) => {
           console.log(res);
         })
@@ -47,7 +47,7 @@ const Bill = () => {
           console.log(err);
         });
       await axios
-        .post("http://localhost:4000/api/products/edit_product", payload2)
+        .post("https://identity-ecommerce-backend.onrender.com/api/products/edit_product", payload2)
         .then((res) => {
           console.log(res);
           console.log("Success");
@@ -56,7 +56,7 @@ const Bill = () => {
           console.log(err);
         });
       await axios
-        .post("http://localhost:4000/api/user/remove_from_cart", payload3)
+        .post("https://identity-ecommerce-backend.onrender.com/api/user/remove_from_cart", payload3)
         .then((res) => {
           console.log(res);
         })

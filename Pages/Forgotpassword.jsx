@@ -12,7 +12,7 @@ const handleSubmit = async(e)=>{
     const payload = {
         email:email
     }
-    await axios.post('http://localhost:4000/api/user/forgot_password',payload)
+    await axios.post('https://identity-ecommerce-backend.onrender.com/api/user/forgot_password',payload)
     .then((res)=>{
         console.log(res)
         setState(false)

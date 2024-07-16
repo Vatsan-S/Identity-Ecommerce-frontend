@@ -25,7 +25,7 @@ const Productpage = () => {
       };
 
       await axios
-        .post("http://localhost:4000/api/products/product_details", payload)
+        .post("https://identity-ecommerce-backend.onrender.com/api/products/product_details", payload)
         .then((res) => {
           // console.log(res.data.result);
           setProductDetails(res.data.result);
@@ -44,7 +44,7 @@ const Productpage = () => {
       };
 
       await axios
-        .post("http://localhost:4000/api/products/product_details", payload)
+        .post("https://identity-ecommerce-backend.onrender.com/api/products/product_details", payload)
         .then((res) => {
           // console.log(res.data.result);
           setProductDetails(res.data.result);
@@ -88,7 +88,7 @@ const Productpage = () => {
         //count:1 as default and in cart section count value changes based on input
       };
       await axios
-        .post("http://localhost:4000/api/products/add_to_cart", payload)
+        .post("https://identity-ecommerce-backend.onrender.com/api/products/add_to_cart", payload)
         .then((res) => {
           console.log(res);
           window.location.reload();

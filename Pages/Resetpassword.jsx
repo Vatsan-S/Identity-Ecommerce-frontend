@@ -20,7 +20,7 @@ const navigate = useNavigate()
       email: email,
       newPassword: newPassword
     };
-    await axios.post('http://localhost:4000/api/user/reset_password',payload)
+    await axios.post('https://identity-ecommerce-backend.onrender.com/api/user/reset_password',payload)
     .then((res)=>{
       console.log(res)
       navigate('/login')

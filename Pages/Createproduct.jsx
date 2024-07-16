@@ -23,7 +23,7 @@ const Createproduct = () => {
   //   ===================================================getting seller details======================================================
   const fetchSeller = async () => {
     await axios
-      .get("http://localhost:4000/api/user/fetch_seller")
+      .get("https://identity-ecommerce-backend.onrender.com/api/user/fetch_seller")
       .then((res) => {
         console.log("sellers", res.data.result);
         setSellerList(res.data.result);
@@ -87,7 +87,7 @@ const Createproduct = () => {
       console.log(payload);
 
       await axios
-        .post("http://localhost:4000/api/products/create_product", payload)
+        .post("https://identity-ecommerce-backend.onrender.com/api/products/create_product", payload)
         .then((res) => {
           console.log(res);
           setLoading(false)

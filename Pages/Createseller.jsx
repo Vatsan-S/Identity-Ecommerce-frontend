@@ -19,7 +19,7 @@ const Createseller = () => {
       activation: true,
       randomString: "",
     };
-    await axios.post('http://localhost:4000/api/user/register',payload)
+    await axios.post('https://identity-ecommerce-backend.onrender.com/api/user/register',payload)
     .then((res)=>{
         setMsg(res.data.message)
         setLoading(false)

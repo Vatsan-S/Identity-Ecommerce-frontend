@@ -11,7 +11,7 @@ const Activation = () => {
     }
     console.log(payload)
 const activation = async()=>{
-    await axios.post('http://localhost:4000/api/user/activation',payload)
+    await axios.post('https://identity-ecommerce-backend.onrender.com/api/user/activation',payload)
     .then((res)=>{
         console.log(res)
         navigate('/login')

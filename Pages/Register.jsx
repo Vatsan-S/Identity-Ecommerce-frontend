@@ -25,7 +25,7 @@ const Register = () => {
     };
 
     await axios
-      .post("http://localhost:4000/api/user/register", payload)
+      .post("https://identity-ecommerce-backend.onrender.com/api/user/register", payload)
       .then((res) => {
         console.log(res.data.message);
         dispatch(signInSuccess(null))

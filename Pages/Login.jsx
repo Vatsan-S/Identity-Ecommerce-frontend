@@ -21,7 +21,7 @@ const Login = () => {
             email:email,
             password:password
         }
-        await axios.post('http://localhost:4000/api/user/login',payload)
+        await axios.post('https://identity-ecommerce-backend.onrender.com/api/user/login',payload)
         .then((res)=>{
             console.log(res.data.selectedUser)
             dispactch(signInSuccess(res.data.selectedUser))

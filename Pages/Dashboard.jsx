@@ -35,7 +35,7 @@ const Dashboard = () => {
   const fetchSalesData = async () => {
     setStatLoading(true);
     await axios
-      .get("http://localhost:4000/api/sales/sales_data")
+      .get("https://identity-ecommerce-backend.onrender.com/api/sales/sales_data")
       .then((res) => {
         console.log(res.data);
         setTotalSales(res.data.totalSales[0].totalRevenue);
@@ -52,7 +52,7 @@ const Dashboard = () => {
   // =========================================fetch products===================================
   const fetchProducts = async () => {
     await axios
-      .get("http://localhost:4000/api/products/fetch_products")
+      .get("https://identity-ecommerce-backend.onrender.com/api/products/fetch_products")
       .then((res) => {
         // console.log(res.data.result)
         setProductList(res.data.result);
@@ -73,7 +73,7 @@ const Dashboard = () => {
       productID: productID,
     };
     await axios
-      .post("http://localhost:4000/api/products/delete_product", payload)
+      .post("https://identity-ecommerce-backend.onrender.com/api/products/delete_product", payload)
       .then((res) => {
         console.log(res.data.message);
       })
@@ -119,7 +119,7 @@ const Dashboard = () => {
       id: id,
     };
     await axios
-      .post("http://localhost:4000/api/products/edit_product", payload)
+      .post("https://identity-ecommerce-backend.onrender.com/api/products/edit_product", payload)
       .then((res) => {
         console.log(res);
         console.log("Success");

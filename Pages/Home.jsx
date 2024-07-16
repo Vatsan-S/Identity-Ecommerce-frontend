@@ -11,7 +11,7 @@ const Home = () => {
   // ===============================fetch products============================
   const fetchProducts = async () => {
     await axios
-      .get("http://localhost:4000/api/products/fetch_products")
+      .get("https://identity-ecommerce-backend.onrender.com/api/products/fetch_products")
       .then((res) => {
         // console.log(res.data.result)
         setProductList(res.data.result);

@@ -22,7 +22,7 @@ const Cart = () => {
     };
 // console.log(currentUser._id)
     await axios
-      .post("http://localhost:4000/api/user/cart_products", payload)
+      .post("https://identity-ecommerce-backend.onrender.com/api/user/cart_products", payload)
       .then((res) => {
         // console.log("Count",res.data.countData)
         // console.log("sorted",res.data.result)
@@ -47,7 +47,7 @@ const Cart = () => {
       index: count.index,
       currentUser: currentUser._id,
     };
-    await axios.post("http://localhost:4000/api/user/cart_list_count", payload)
+    await axios.post("https://identity-ecommerce-backend.onrender.com/api/user/cart_list_count", payload)
     .then((res)=>{
       setDefaultCount(res.data.countData)
       // console.log(res)
