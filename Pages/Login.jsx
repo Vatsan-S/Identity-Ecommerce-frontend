@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { signInstart, signInSuccess } from '../Redux/Slice/userSlice';
+import { signInFailure, signInstart, signInSuccess } from '../Redux/Slice/userSlice';
 import Navbar from '../Components/Navbar';
 
 const Login = () => {
@@ -11,10 +11,11 @@ const Login = () => {
     const [msg, setMsg]= useState('')
     const dispactch = useDispatch()
     const navigate = useNavigate()
-
+const {loading}= useSelector((state)=>state.user)
 
     // ==================================handling Submit======================
     const handleSubmit = async(e)=>{
+        setMsg('')
         e.preventDefault()
         dispactch(signInstart())
         const payload = {
@@ -30,6 +31,7 @@ const Login = () => {
         })
         .catch(err=>{
             console.log(err.response.data.message)
+            dispactch(signInFailure(err.response.data.message))
             setMsg(err.response.data.message)
         })
     }
@@ -43,7 +45,7 @@ const Login = () => {
                 <form onSubmit={handleSubmit} className='form'>
                 <input type="email" placeholder='email' name='email' value={email} onChange={(e)=>setEmail(e.target.value)} />
                 <input type="password" placeholder='password' name='password' value={password} onChange={((e)=>setPassword(e.target.value))} />
-                <button type='submit'>Submit</button>
+                <button type='submit' disabled={loading}>{loading?"Loading...":"Submit"}</button>
                 <Link to='/forgotpassword' className='linkingText'>Forgot Password?</Link>
             </form>
             <Link to='/register' className='linkingText'>New here? <span className='boldText'>Register</span></Link>

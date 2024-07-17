@@ -31,6 +31,43 @@
 }
 
 /* ------------Common components--------------- */
+.activationPage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Noto Sans", sans-serif;
+  font-size: var(--fs-m-title);
+}
+.loading-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.loading-card {
+  width: 300px;
+  height: 400px;
+  margin: 10px;
+  background-color: #f0f0f0; 
+  border-radius: 8px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
 .logoText{
   text-decoration: none;
   font-size: 24px;

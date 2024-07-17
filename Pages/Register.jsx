@@ -15,6 +15,7 @@ const Register = () => {
   const {loading} = useSelector((state)=>state.user)
   // ==============handling Submit of form============
   const handleSubmit = async (e) => {
+    setMsg('')
     e.preventDefault();
     dispatch(signInstart())
     const payload = {

@@ -186,7 +186,9 @@ const Productpage = () => {
           {alreadyInCart ? (
             <button className="alreadyInCart">Added in Cart</button>
           ) : (
-            <button className="addToCart" onClick={handleAddToCart}>
+            productDetails.stock < 1 || currentUser == null? <button className="alreadyInCart">
+            Add to Cart
+          </button>:<button className="addToCart" onClick={handleAddToCart}>
               Add to Cart
             </button>
           )}

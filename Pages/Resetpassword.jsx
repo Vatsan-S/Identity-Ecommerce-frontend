@@ -11,6 +11,7 @@ const navigate = useNavigate()
 
   // ============================================================useNavigate====================================
   const handleSubmit = async (e) => {
+    setMsg('')
     e.preventDefault();
     if (newPassword != confirmPassword) {
       return setMsg("Password does not match");

@@ -8,6 +8,7 @@ const Forgotpassword = () => {
     const [msg, setMsg] = useState('')
 // ========================================handling Submit======================
 const handleSubmit = async(e)=>{
+    setMsg('')
     e.preventDefault()
     const payload = {
         email:email
