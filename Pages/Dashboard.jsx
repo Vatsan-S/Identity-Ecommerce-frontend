@@ -191,7 +191,7 @@ const Dashboard = () => {
                       className="product-image"
                     />
                   </td>
-                  <td className="display">${ele.price}</td>
+                  <td className="display">Rs.{ele.price}</td>
                   <td >{ele.tagname}</td>
                   <td className="display">{ele.category}</td>
                   <td className="display"> <div className="description">{ele.about}</div> </td>
